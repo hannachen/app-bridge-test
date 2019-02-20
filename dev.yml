@@ -1,0 +1,20 @@
+name: testapp
+
+type: node
+
+up:
+  - railgun
+  - node:
+      version: v10.14.1
+      yarn: true
+      packages:
+        - .
+
+commands:
+  # console:
+  server: yarn start
+  build: yarn build
+  # test: yarn test
+
+open:
+  app: https://testapp.myshopify.io
