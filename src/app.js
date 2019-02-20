@@ -1,8 +1,5 @@
 import createApp from "@shopify/app-bridge";
-import {
-  Button,
-  Modal,
-} from "@shopify/app-bridge/actions";
+import {Modal} from "@shopify/app-bridge/actions";
 
 const app = createApp({
   apiKey: "app_bridge_key",
@@ -16,7 +13,8 @@ const modalOptions = {
 
 const myModal = Modal.create(app, modalOptions);
 
-const button2 = Button.create(app, { label: "Open modal" });
-button2.subscribe(Button.Action.CLICK, data => {
+function openModal() {
   myModal.dispatch(Modal.Action.OPEN);
-});
+}
+
+window.openModal = openModal;
